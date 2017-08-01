@@ -1,0 +1,25 @@
+{
+  "name": "use-nunjucks",
+  "version": "1.0.0",
+  "description": "learn about template engine--nunjucks.",
+  "main": "app.js",
+  "scripts": {
+    "test": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AllenMRbai/use-nunjucks.git"
+  },
+  "author": "Allen Bai",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AllenMRbai/use-nunjucks/issues"
+  },
+  "homepage": "https://github.com/AllenMRbai/use-nunjucks#readme",
+  "dependencies": {
+    "koa": "^2.0.0",
+    "koa-bodyparser": "^4.2.0",
+    "koa-router": "^7.2.1",
+    "nunjucks": "^2.4.2"
+  }
+}
