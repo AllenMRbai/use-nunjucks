@@ -1,0 +1,79 @@
+#wrapper{
+	width: 100%;
+	height: 100%;
+	background-image: url(../img/login_bg.jpg);
+	background-position: 0 center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding: 10px;
+}
+.logo{
+	width:15vw;
+	height: 15vw;
+	margin:10vw auto;
+	margin-bottom: 2vw;
+	border-radius: 50%;
+	overflow: hidden;
+	border:3px solid rgba(255,255,255,.2);
+}
+.tips{
+	color:#d8d7d2;
+	text-align: center;
+}
+#wrapper form{
+	width: 100%;
+}
+.login_box{
+	width: 80vw;
+	margin:0 auto;
+	background-color: rgba(255,255,255,.8);
+	padding:10px;border-radius: 8px;
+	margin-top: 16vw;
+}
+.login_box label{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	flex:1;
+	padding:10px;
+}
+
+.login_box label input{flex:1;
+	margin-left: 8px;
+	border:none;
+	outline: none;
+	background-color: transparent;
+	color:#666;
+}
+
+#wrapper input[type=submit]{
+	border:none;background-color:rgba(238,170,25,.8);
+	color: #fff;
+	font-size: .8rem;
+	width: 50vw;
+	padding:10px 0;
+	text-align: center;
+	border-radius: 6px;
+	margin:0 auto;
+	display: block;
+	margin-top: 10vw;
+}
+.prompt{
+	font-size: 1rem;
+	text-align: center;
+	color: #141a23;
+	margin:10vw 0;
+	font-weight: bold;
+}
+.btn{
+	border:none;background-color:rgba(8,66,163,.8);
+	color: #fff;
+	font-size: .8rem;
+	width: 50vw;
+	padding:10px 0;
+	text-align: center;
+	border-radius: 6px;
+	margin:0 auto;
+	display: block;
+	margin-top: 10vw; 
+}

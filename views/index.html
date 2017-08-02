@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<meta content="telephone=no,email=no" name="format-detection">
+	<meta name="browsermode" content="application"/>
+	<meta name="x5-orientation" content="portrait">
+	<meta name="x5-page-mode" content="app">
+	<title>首页</title>
+	<link rel="stylesheet" href="../assets/css/reset.css">
+	<link rel="stylesheet" href="../assets/css/index.css">
+</head>
+<body>
+<div class="search_box">
+	<div class="flex_center flex_search">
+		<div class="logo"><img src="../assets/img/logo.jpg"></div>
+		<div class="search_bar">搜索你需要的东西</div>
+		<div class="search_btn"><img src="../assets/img/live_icon2.png"></div>
+	</div>
+</div>
+<div id="wrapper">
+	<div id="scroller">
+		<div style="height: 13vw;"></div>
+		<div class="banner">
+			<img src="../assets/img/pro_banner.jpg">
+		</div>
+		<ul class="classify">
+			<!-- <li><img src="../assets/img/classification_1.jpg"></li> -->
+		</ul>
+		<div class="welcome">欢迎登录，亲爱的&nbsp;<span>Allen</span></div>
+		<div class="product_box">
+			<!-- <div class="pro_list flex_between">
+				<div class="pro_pic"><img src="../assets/img/product_pic.jpg"></div>
+				<div class="pro_detail">
+					<div class="pro_name">爱的精灵啊 拉开始减肥了卡机啊 垃圾房 安康</div>
+					<div class="pro_price">折后价 <span>56</span><span>￥</span></</div>
+				</div>
+			</div> -->
+
+		</div><!-- product_box -->
+
+	</div><!-- scroller -->
+</div><!-- wrapper -->
+
+<script src="../assets/js/jquery.min.js"></script>
+<script>
+function renderClass(){
+	var i=1;
+	var html="";
+	for(;i<=10;i++){
+		html+='<li><img src="../assets/img/classification_'+i+'.jpg"></li>'
+	}
+	$(".classify").html(html);
+}
+function renderProduct(){
+	var ram=Math.floor(Math.random()*80+20);
+	var i=0;
+	var html="";
+	for(;i<ram;i++){
+		html+='<div class="pro_list flex_between"><div class="pro_pic"><img src="../assets/img/product_pic.jpg"></div><div class="pro_detail"><div class="pro_name">爱的精灵啊 拉开始减肥了卡机啊 垃圾房 安康</div><div class="pro_price">折后价 <span>56</span><span>￥</span></</div></div></div></div>';
+	}
+	$(".product_box").html(html);
+}
+
+renderClass();
+renderProduct();
+</script>
+</body>
+</html>

@@ -1,32 +1,20 @@
-const nunjucks=require('nunjucks');
+const temEnv=require('./template-engine');
+const routes=require('./controller');
+const fs=require('fs');
+const path=require('path');
+const Koa=require('koa');
+const bodyParser=require('koa-bodyparser');
+const staticFiles=require('./static-files');
+const app=new Koa();
 
-function createEnv(path,opts){
-    var
-        autoescape=opts.autoescape===undefined?true:opts.autoescape,
-        noCache=opts.noCache || false,
-        watch=opts.watch || false,
-        throwOnUndefined=opts.throwOnUndefined ||false,
-        env=new nunjucks.Environment(
-            new nunjucks.FileSystemLoader('views',{
-                noCache:noCache,
-                watch:watch,
-            }),{
-                autoescape:autoescape,
-                throwOnUndefined:throwOnUndefined
-            });
-    if(opts.filters){
-        for(let f in opts.filters){
-            env.addFilter(f,opts.filters[f]);
-        }
-    }
-    return env;
-}
+//在app注册bodyParser，让app可以读取ctx.request.body
+app.use(bodyParser());
 
-var env=createEnv('views',{
-    watch:ture,
-    filters:{
-        hex:function(n){
-            return '0x'+n.toString(16);
-        }
-    }
-});
+//获取静态资源
+app.use(staticFiles('/assets/', __dirname + '/assets'));
+
+//路由管理
+app.use(routes());
+
+app.listen(3000);
+console.log('app started at port 3000...');
