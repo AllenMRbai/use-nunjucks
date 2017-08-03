@@ -1,0 +1,22 @@
+{% extends 'base.html'%}
+{% block header %}{% endblock %}
+{% block body %}
+<div id="wrapper">
+	<div id="scroller">
+		<div style="height: 13vw;"></div>
+        <div class="welcome">欢迎登录，亲爱的&nbsp;<span>{{name}}</span></div>
+        <div class="product_box">
+            {% for product in products %}
+			<div class="pro_list flex_between">
+				<div class="pro_pic"><img src="../assets/img/product_pic.jpg"></div>
+				<div class="pro_detail">
+					<div class="pro_name">{{product.proName}}</div>
+					<div class="pro_price">折后价 <span>{{product.price}}</span><span>￥</span></div>
+				</div>
+			</div> 
+            {% endfor %}  
+        </div><!-- product_box -->
+        
+	</div><!-- scroller -->
+</div><!-- wrapper -->
+{% endblock %}

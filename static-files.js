@@ -1,5 +1,7 @@
 const path=require('path');
 const mime=require('mime');
+//该模块的fs和node自带的fs是一样的
+//唯一不同的是node自带的fs使用回调，但mz封装的fs为promise对象,这样方便我们使用await，而不是回调
 const fs=require('mz/fs');
 
 //url:类似'/static/'
@@ -7,8 +9,8 @@ const fs=require('mz/fs');
 function staticFiles(url,dir){
     return async (ctx,next)=>{
         let rpath=ctx.request.path;
-        console.log("yeyeyeyeyeyeey");
-        console.log(rpath);
+        //console.log("yeyeyeyeyeyeey");
+        //console.log(rpath);
         //console.log(`path:${rpath} url:${ctx.request.url}`);
         //判断是否以指定的url开头：
         if(rpath.startsWith(url)){

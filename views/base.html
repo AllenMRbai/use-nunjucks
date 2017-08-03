@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<meta content="telephone=no,email=no" name="format-detection">
+	<meta name="browsermode" content="application"/>
+	<meta name="x5-orientation" content="portrait">
+	<meta name="x5-page-mode" content="app">
+	<title>基本模板</title>
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <link rel="stylesheet" href="../assets/css/index.css">
+</head>
+<body>
+{% block header %}
+<div class="search_box">
+	<div class="flex_center flex_search">
+		<div class="logo"><img src="../assets/img/logo.jpg"></div>
+		<div class="search_bar">搜索你需要的东西</div>
+		<div class="search_btn"><img src="../assets/img/live_icon2.png"></div>
+	</div>
+</div>
+{% endblock%}
+{% block body %}
+<div id="wrapper">
+	<div id="scroller">
+		<div style="height: 13vw;"></div>
+        <div class="welcome">欢迎登录，亲爱的&nbsp;<span>{{name}}</span></div>
+        
+	</div><!-- scroller -->
+</div><!-- wrapper -->
+{% endblock %}
+</body>
+</html>
