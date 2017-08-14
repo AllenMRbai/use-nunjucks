@@ -6,7 +6,7 @@ var fn_loginPage=async (ctx,next)=>{
 }
 
 var fn_login=async (ctx,next)=>{
-    cons(ctx);
+    //cons(ctx);
     let
         name=ctx.request.body.name || 'Allen',
         password=ctx.request.body.password;
