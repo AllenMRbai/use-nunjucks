@@ -2,6 +2,7 @@ const fs=require('mz/fs');
 
 var fn_loginPage=async (ctx,next)=>{
     ctx.response.type='text/html';
+    //console.log("这是个登录页面");
     ctx.response.body=await fs.createReadStream('views/login.html','utf8');
 }
 
@@ -12,7 +13,7 @@ var fn_login=async (ctx,next)=>{
         password=ctx.request.body.password;
         console.log(name,password);
     ctx.response.type='text/html';
-    if(name==='Allen' && password=='123456'){
+    if(name==='Allen' && password==='123456'){
         //ctx.response.body=await fs.createReadStream('views/index.html','utf8');
         ctx.render('index.html',{name:'一叶知秋'});
     }else{

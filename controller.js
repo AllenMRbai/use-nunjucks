@@ -22,6 +22,7 @@ function addControllers(router,dir){
     let js_files=files.filter((f)=>{
         return f.endsWith('.js');
     });
+    //console.log( 'lalalalalala'+typeof js_files);
     for (let f of js_files){
        console.log(`process controller:${f}...`);
        let jsPath=path.join(cPath,f);
@@ -35,5 +36,6 @@ module.exports=function(dir){
         controllers_dir=dir || 'controllers',
         router=require('koa-router')();
     addControllers(router,controllers_dir);
+    console.log('配置路由')
     return router.routes();
 }

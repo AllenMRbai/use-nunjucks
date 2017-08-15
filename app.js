@@ -25,6 +25,7 @@ app.use(async (ctx,next)=>{
         execTime;
     await next();
     execTime=new Date().getTime()-start;
+    //console.log("X-Response-Time",`${execTime}ms`);
     ctx.response.set('X-Response-Time',`${execTime}ms`);
 });
 

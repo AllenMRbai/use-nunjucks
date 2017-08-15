@@ -40,12 +40,15 @@ function templating(path,opts){
     return async (ctx,next)=>{
         //给ctx绑定render函数
         ctx.render=function(view,model){
+            //console.log("这里这里")
+            //console.log(ctx.state)
             //把render后的内容赋值给response.body
             ctx.response.body=env.render(view,Object.assign({},ctx.state || {}, model || {}));
             //设置Content-Type
             ctx.response.type='text/html';
         };
         //继续处理请求
+        console.log("绑定render函数")
         await next();
     };
 }

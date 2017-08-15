@@ -1,5 +1,5 @@
 const path=require('path');
-const mime=require('mime');
+const mime=require('mime');//获得文件的格式 例如 img/jpg
 //该模块的fs和node自带的fs是一样的
 //唯一不同的是node自带的fs使用回调，但mz封装的fs为promise对象,这样方便我们使用await，而不是回调
 const fs=require('mz/fs');
@@ -20,6 +20,7 @@ function staticFiles(url,dir){
             if(await fs.exists(fp)){
                 //查找文件的mime:
                 ctx.response.type=mime.lookup(rpath);
+                //console.log(`这里的响应类型为${mime.lookup(rpath)}`);
                 //读取文件内容并赋值给response.body
                 ctx.response.body=await fs.readFile(fp);
             }else{
